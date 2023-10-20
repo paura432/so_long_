@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pramos <pramos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 21:55:59 by pramos            #+#    #+#             */
-/*   Updated: 2023/09/26 18:31:39 by pramos           ###   ########.fr       */
+/*   Updated: 2023/10/20 12:01:49 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int count_lines(char *argv)
     int fd;
     int lines;
     int bytes;
-    char character[0];
+    char character[1];
     
     fd = open(argv, O_RDONLY);
     lines = 1;
@@ -37,7 +37,7 @@ int count_bytes(char *argv)
     int fd;
     int bytes;
     int bytes_read;
-    char character[0];
+    char character[1];
     
     fd = open(argv, O_RDONLY);
     bytes = 0;

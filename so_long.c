@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pramos <pramos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 18:08:19 by pramos            #+#    #+#             */
-/*   Updated: 2023/10/20 00:06:14 by pramos           ###   ########.fr       */
+/*   Updated: 2023/10/20 12:29:56 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,22 +32,23 @@ int	main(int argc, char **argv)
 	char 	**map;
 	t_image	*img;
 	
-	atexit(leaks);
 	map = ft_read(argv);
+	if (argc != 2)
+		ft_printf("more than 2 arguments\n");
 	if(!check_map(map))
 		return(ft_printf("\nbad map"));
 	img = (t_image *)malloc(sizeof(t_image));
 	if(!img)
 		exit(1);
-	if (argc != 2)
-		printf("Sadece 2 arguman girebilirsin\n");
+
 	img->mlx = mlx_init();
+	if (img->mlx == NULL)
+		return(ft_printf("bad inicialization of mlx \n"), 0);
 	img->y_size = count_lines(argv[1]) * 50;
 	img->x_size = count_bytes(argv[1]) * 50;
 	img->mlx_win = mlx_new_window(img->mlx, img->x_size, img->y_size, "So_long!");
-	
 	img->map = map;
-	put_img(img);
-	mlx_key_hook(img->mlx_win, move, img);
+//	put_img(img);
+//	mlx_key_hook(img->mlx_win, move, img);
 	mlx_loop(img->mlx);
 }

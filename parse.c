@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pramos <pramos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 17:28:50 by pramos            #+#    #+#             */
-/*   Updated: 2023/10/19 17:53:01 by pramos           ###   ########.fr       */
+/*   Updated: 2023/10/20 12:02:31 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,11 @@
 int check_map(char **map)
 {
     char    **flood_map;
-    int c;
     
-    c = 0;
     if(!check_walls(map))
         return(0);
     if(!check_obj(map, 0, 0))
         return(0);
-
     flood_map = change_map(map);
     if(!check_flood_map(flood_map))
         return(0);
@@ -31,9 +28,6 @@ int check_map(char **map)
 
 int check_flood_map(char **flood_map)
 {
-    int c;
-
-    c = 0;
     f_fill_p2e(flood_map, '1', check_p(flood_map, 1), check_p(flood_map, 0));
     if(!check_exit(flood_map, 0, 0))
         return (0);
@@ -42,7 +36,7 @@ int check_flood_map(char **flood_map)
 
 int check_exit(char **flood_map, int x, int y)
 {
-    while(flood_map[y] != '\0')
+    while(flood_map[y] != NULL)
     {
         x = 0;
         while(flood_map[y][x] != '\0' && flood_map[y][x] != '\n')

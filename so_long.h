@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pramos <pramos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 18:07:41 by pramos            #+#    #+#             */
-/*   Updated: 2023/10/19 17:36:52 by pramos           ###   ########.fr       */
+/*   Updated: 2023/10/20 12:01:00 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include "Libft/libft.h"
 # include "ft_printf/ft_printf.h"
 # include "get_next_line/get_next_line.h"
-# include <mlx.h>
+# include "minilibx-linux/mlx.h"
 
 typedef struct	s_image {
 	void	*img;
