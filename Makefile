@@ -4,7 +4,7 @@ MY_SOURCES = so_long.c read.c put_img.c move.c check_move.c check_utils.c parse.
 
 MY_OBJECTS =  $(MY_SOURCES:.c=.o)
 
-CC = gcc -Wall -Wextra -Werror #-g3 -fsanitize=address
+CC = gcc -Wall -Wextra -Werror -g3 -fsanitize=address
 MLXFLAGS = -lmlx -framework OpenGL -framework AppKit
 
 $(NAME): $(MY_OBJECTS)

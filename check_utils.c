@@ -6,7 +6,7 @@
 /*   By: pramos <pramos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 20:11:59 by pramos            #+#    #+#             */
-/*   Updated: 2023/10/23 23:33:28 by pramos           ###   ########.fr       */
+/*   Updated: 2023/10/26 20:00:55 by pramos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,11 @@ int	count_lines_w_fd(char **map)
 
 void	f_fill_p2e(char **flood_map, char target, int y, int x)
 {
-	if (y < 0 || x < 0 || y >= 7 || x >= 17)
+	if (y < 0 || x < 0 || y >= count_lines_w_fd(flood_map)|| x >= count_bytes_w_fd(flood_map[0]))
 		return ;
 	if (flood_map[y][x] == 'F' || flood_map[y][x] == target)
 		return ;
-	if (flood_map[y][x] != 'P')
-		flood_map[y][x] = 'F';
+	flood_map[y][x] = 'F';
 	f_fill_p2e(flood_map, target, y - 1, x);
 	f_fill_p2e(flood_map, target, y + 1, x);
 	f_fill_p2e(flood_map, target, y, x - 1);

@@ -6,7 +6,7 @@
 /*   By: pramos <pramos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 18:08:19 by pramos            #+#    #+#             */
-/*   Updated: 2023/10/23 23:53:34 by pramos           ###   ########.fr       */
+/*   Updated: 2023/10/26 19:35:04 by pramos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,18 +33,20 @@ int	main(int argc, char **argv)
 	char	**map;
 	t_image	*img;
 
-	atexit(leaks);
+	// atexit(leaks);
 	map = ft_read(argv);
 	if (!check_map(map, argv))
-		return (ft_printf("\nbad map"));
+		return (ft_printf("\nbad map\n"));
 	img = (t_image *)malloc(sizeof(t_image));
 	if (!img)
 		exit(1);
 	if (argc != 2)
-		printf("Sadece 2 arguman girebilirsin\n");
+		ft_printf("bad arguments\n");
 	img->mlx = mlx_init();
-	img->y_size = count_lines(argv[1]) * 50;
-	img->x_size = count_bytes(argv[1]) * 50;
+	img->y_size = count_lines_w_fd(map) * 50;
+	img->x_size = count_bytes_w_fd(map[0]) * 50;
+	ft_printf("%i\n", img->y_size / 50);
+	ft_printf("%i\n", img->x_size / 50);
 	img->mlx_win = mlx_new_window(img->mlx, img->x_size,
 			img->y_size, "So_long!");
 	img->steps = 0;

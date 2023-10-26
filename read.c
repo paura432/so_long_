@@ -6,7 +6,7 @@
 /*   By: pramos <pramos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 21:55:59 by pramos            #+#    #+#             */
-/*   Updated: 2023/10/23 23:40:55 by pramos           ###   ########.fr       */
+/*   Updated: 2023/10/26 19:32:09 by pramos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ int	count_lines(char *argv)
 	bytes = 1;
 	while (bytes != 0)
 	{
+		bytes = read(fd, character, 1);
 		if (character[0] == '\n')
 			lines++;
-		bytes = read(fd, character, 1);
 	}
 	close(fd);
-	return (lines);
+	return (lines - 1);
 }
 
 int	count_bytes(char *argv)
