@@ -6,7 +6,7 @@
 /*   By: pramos <pramos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 20:37:38 by pramos            #+#    #+#             */
-/*   Updated: 2023/10/23 23:32:37 by pramos           ###   ########.fr       */
+/*   Updated: 2023/10/30 16:46:45 by pramos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,11 @@ void	check_move(t_image *img)
 		mlx_put_image_to_window(img->mlx, img->mlx_win,
 			img->img, img->x_pos * 50, img->y_pos * 50);
 		img->objects -= 1;
+		img->map[img->y_pos][img->x_pos] = '0';
 	}
 	if (img->objects == 0)
 		put_door(img->map, img);
-	if (img->map[img->y_pos][img->x_pos] == 'E')
+	if (img->map[img->y_pos][img->x_pos] == 'E' && img->objects == 0)
 	{
 		ft_printf("YOU WIN\n");
 		free_list(img);

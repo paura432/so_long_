@@ -6,7 +6,7 @@
 /*   By: pramos <pramos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 22:14:21 by pramos            #+#    #+#             */
-/*   Updated: 2023/10/23 23:35:16 by pramos           ###   ########.fr       */
+/*   Updated: 2023/10/30 16:48:52 by pramos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,16 @@ int	move(int key_code, t_image *img)
 		left(img);
 	if (key_code == 1)
 		down(img);
+	if (key_code == 53)
+	{
+		ft_printf("GAME FINISHED\n");
+		free_list(img);
+	}
 	return (0);
 }
 
 void	right(t_image *img)
 {
-	ft_printf("\nNumero de pasos: %i\n", img->steps += 1);
 	if (img->map[img->y_pos][img->x_pos + 1] == '1')
 		return ;
 	img->x_pos += 1;
@@ -38,11 +42,11 @@ void	right(t_image *img)
 	img = ft_new_sprite(img, "sprites/background.xpm");
 	mlx_put_image_to_window(img->mlx, img->mlx_win,
 		img->img, (img->x_pos - 1) * 50, img->y_pos * 50);
+	ft_printf("\nNumero de pasos: %i\n", img->steps += 1);
 }
 
 void	up(t_image *img)
 {
-	ft_printf("\nNumero de pasos: %i\n", img->steps += 1);
 	if (img->map[img->y_pos - 1][img->x_pos] == '1')
 		return ;
 	img->y_pos -= 1;
@@ -53,11 +57,12 @@ void	up(t_image *img)
 	img = ft_new_sprite(img, "sprites/background.xpm");
 	mlx_put_image_to_window(img->mlx, img->mlx_win,
 		img->img, img->x_pos * 50, (img->y_pos + 1) * 50);
+	ft_printf("\nNumero de pasos: %i\n", img->steps += 1);
 }
 
 void	left(t_image *img)
 {
-	ft_printf("\nNumero de pasos: %i\n", img->steps += 1);
+
 	if (img->map[img->y_pos][img->x_pos - 1] == '1')
 		return ;
 	img->x_pos -= 1;
@@ -68,11 +73,11 @@ void	left(t_image *img)
 	img = ft_new_sprite(img, "sprites/background.xpm");
 	mlx_put_image_to_window(img->mlx, img->mlx_win,
 		img->img, (img->x_pos + 1) * 50, img->y_pos * 50);
+	ft_printf("\nNumero de pasos: %i\n", img->steps += 1);
 }
 
 void	down(t_image *img)
 {
-	ft_printf("\nNumero de pasos: %i\n", img->steps += 1);
 	if (img->map[img->y_pos + 1][img->x_pos] == '1')
 		return ;
 	img->y_pos += 1;
@@ -83,4 +88,5 @@ void	down(t_image *img)
 	img = ft_new_sprite(img, "sprites/background.xpm");
 	mlx_put_image_to_window(img->mlx, img->mlx_win, img->img,
 		img->x_pos * 50, (img->y_pos - 1) * 50);
+	ft_printf("\nNumero de pasos: %i\n", img->steps += 1);
 }

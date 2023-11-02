@@ -6,7 +6,7 @@
 /*   By: pramos <pramos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 18:07:41 by pramos            #+#    #+#             */
-/*   Updated: 2023/10/23 23:53:20 by pramos           ###   ########.fr       */
+/*   Updated: 2023/10/30 16:59:35 by pramos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,7 @@ int		check_exit(char **flood_map, int x, int y);
 void	free_list(t_image *img);
 void	free_mlx(t_image *img);
 void	free_matriz(char **matriz);
+
+int		close_window(t_image *img);
 
 #endif

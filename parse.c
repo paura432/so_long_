@@ -6,7 +6,7 @@
 /*   By: pramos <pramos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 17:28:50 by pramos            #+#    #+#             */
-/*   Updated: 2023/10/26 19:46:11 by pramos           ###   ########.fr       */
+/*   Updated: 2023/10/30 17:14:26 by pramos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,8 @@ int	check_map(char **map, char **argv)
 {
 	char	**flood_map;
 
-	if (!check_walls(map))
+	if (!check_walls(map) ||!check_obj(map, 0, 0))
 		return (0);
-	if (!check_obj(map, 0, 0))
-		return (0);
-
 	flood_map = change_map(argv);
 	if (!check_flood_map(flood_map))
 	{
@@ -33,9 +30,6 @@ int	check_map(char **map, char **argv)
 
 int	check_flood_map(char **flood_map)
 {
-	
-	ft_printf("%i\n", check_p(flood_map, 1));
-	ft_printf("%i\n", check_p(flood_map, 0));
 	f_fill_p2e(flood_map, '1', check_p(flood_map, 1), check_p(flood_map, 0));
 	if (!check_exit(flood_map, 0, 0))
 		return (0);
@@ -47,7 +41,6 @@ int	check_exit(char **flood_map, int x, int y)
 	while (flood_map[y] != '\0')
 	{
 		x = 0;
-		ft_printf("%s", flood_map[y]);
 		while (flood_map[y][x] != '\0' && flood_map[y][x] != '\n')
 		{
 
