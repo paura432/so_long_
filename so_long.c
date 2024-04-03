@@ -6,7 +6,7 @@
 /*   By: pramos <pramos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 18:08:19 by pramos            #+#    #+#             */
-/*   Updated: 2023/11/03 00:09:22 by pramos           ###   ########.fr       */
+/*   Updated: 2024/04/03 23:15:13 by pramos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,8 @@ int	main(int argc, char **argv)
 	if (!img)
 		exit(1);
 	img->mlx = mlx_init();
-	img->y_size = count_lines_w_fd(map) * 50;
-	img->x_size = count_bytes_w_fd(map[0]) * 50;
+	img->y_size = count_lines_w_fd(map) * 64;
+	img->x_size = count_bytes_w_fd(map[0]) * 64;
 	img->mlx_win = mlx_new_window(img->mlx, img->x_size,
 			img->y_size, "So_long!");
 	img->steps = 0;

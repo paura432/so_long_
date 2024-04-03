@@ -6,7 +6,7 @@
 /*   By: pramos <pramos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 22:14:21 by pramos            #+#    #+#             */
-/*   Updated: 2023/10/30 16:48:52 by pramos           ###   ########.fr       */
+/*   Updated: 2024/04/03 23:15:33 by pramos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ void	right(t_image *img)
 	check_move(img);
 	img = ft_new_sprite(img, "sprites/rick-right.xpm");
 	mlx_put_image_to_window(img->mlx, img->mlx_win, img->img,
-		img->x_pos * 50, img->y_pos * 50);
+		img->x_pos * 64, img->y_pos * 64);
 	img = ft_new_sprite(img, "sprites/background.xpm");
 	mlx_put_image_to_window(img->mlx, img->mlx_win,
-		img->img, (img->x_pos - 1) * 50, img->y_pos * 50);
+		img->img, (img->x_pos - 1) * 64, img->y_pos * 64);
 	ft_printf("\nNumero de pasos: %i\n", img->steps += 1);
 }
 
@@ -53,10 +53,10 @@ void	up(t_image *img)
 	check_move(img);
 	img = ft_new_sprite(img, "sprites/rick-back.xpm");
 	mlx_put_image_to_window(img->mlx, img->mlx_win,
-		img->img, img->x_pos * 50, img->y_pos * 50);
+		img->img, img->x_pos * 64, img->y_pos * 64);
 	img = ft_new_sprite(img, "sprites/background.xpm");
 	mlx_put_image_to_window(img->mlx, img->mlx_win,
-		img->img, img->x_pos * 50, (img->y_pos + 1) * 50);
+		img->img, img->x_pos * 64, (img->y_pos + 1) * 64);
 	ft_printf("\nNumero de pasos: %i\n", img->steps += 1);
 }
 
@@ -69,10 +69,10 @@ void	left(t_image *img)
 	check_move(img);
 	img = ft_new_sprite(img, "sprites/rick-left.xpm");
 	mlx_put_image_to_window(img->mlx, img->mlx_win, img->img,
-		img->x_pos * 50, img->y_pos * 50);
+		img->x_pos * 64, img->y_pos * 64);
 	img = ft_new_sprite(img, "sprites/background.xpm");
 	mlx_put_image_to_window(img->mlx, img->mlx_win,
-		img->img, (img->x_pos + 1) * 50, img->y_pos * 50);
+		img->img, (img->x_pos + 1) * 64, img->y_pos * 64);
 	ft_printf("\nNumero de pasos: %i\n", img->steps += 1);
 }
 
@@ -84,9 +84,9 @@ void	down(t_image *img)
 	check_move(img);
 	img = ft_new_sprite(img, "sprites/rick-front.xpm");
 	mlx_put_image_to_window(img->mlx, img->mlx_win, img->img,
-		img->x_pos * 50, img->y_pos * 50);
+		img->x_pos * 64, img->y_pos * 64);
 	img = ft_new_sprite(img, "sprites/background.xpm");
 	mlx_put_image_to_window(img->mlx, img->mlx_win, img->img,
-		img->x_pos * 50, (img->y_pos - 1) * 50);
+		img->x_pos * 64, (img->y_pos - 1) * 64);
 	ft_printf("\nNumero de pasos: %i\n", img->steps += 1);
 }

@@ -6,7 +6,6 @@ MY_OBJECTS =  $(MY_SOURCES:.c=.o)
 
 CC = gcc -Wall -Wextra -Werror #-g3 -fsanitize=address
 MLXFLAGS = -lmlx -framework OpenGL -framework AppKit
-
 $(NAME): $(MY_OBJECTS)
 	@${MAKE} -C ./Libft
 	@${MAKE} -C ./ft_printf

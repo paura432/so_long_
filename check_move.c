@@ -6,7 +6,7 @@
 /*   By: pramos <pramos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 20:37:38 by pramos            #+#    #+#             */
-/*   Updated: 2023/10/30 16:46:45 by pramos           ###   ########.fr       */
+/*   Updated: 2024/04/03 23:15:43 by pramos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	check_move(t_image *img)
 	{
 		img = ft_new_sprite(img, "sprites/background.xpm");
 		mlx_put_image_to_window(img->mlx, img->mlx_win,
-			img->img, img->x_pos * 50, img->y_pos * 50);
+			img->img, img->x_pos * 64, img->y_pos * 64);
 		img->objects -= 1;
 		img->map[img->y_pos][img->x_pos] = '0';
 	}
