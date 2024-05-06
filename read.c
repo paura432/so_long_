@@ -17,7 +17,7 @@ int	count_lines(char *argv)
 	int		fd;
 	int		lines;
 	int		bytes;
-	char	character[0];
+	char	character[1];
 
 	fd = open(argv, O_RDONLY);
 	lines = 1;
@@ -37,7 +37,7 @@ int	count_bytes(char *argv)
 	int		fd;
 	int		bytes;
 	int		bytes_read;
-	char	character[0];
+	char	character[1];
 
 	fd = open(argv, O_RDONLY);
 	bytes = 0;

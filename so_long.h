@@ -17,10 +17,10 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
-# include "Libft/libft.h"
+# include "libft/libft.h"
 # include "ft_printf/ft_printf.h"
 # include "get_next_line/get_next_line.h"
-# include <mlx.h>
+# include "mlx_linux/mlx.h"
 
 typedef struct s_image {
 	void	*img;

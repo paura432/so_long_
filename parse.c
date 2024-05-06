@@ -38,10 +38,10 @@ int	check_flood_map(char **flood_map)
 
 int	check_exit(char **flood_map, int x, int y)
 {
-	while (flood_map[y] != '\0')
+	while (flood_map[y] != 0)
 	{
 		x = 0;
-		while (flood_map[y][x] != '\0' && flood_map[y][x] != '\n')
+		while (flood_map[y][x] != 0 && flood_map[y][x] != '\n')
 		{
 
 			if (flood_map[y][x] == 'E')

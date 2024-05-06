@@ -239,7 +239,7 @@ static char *result[] = {
 "vX c #F4F4FB",
 "bX c #FFF5FD",
 "nX c #F5FEFE",
-"mX c #FFFFFFFF",
+"mX c #none",
 /* pixels */
 "mXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmX",
 "mXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmXmX",
