@@ -14,15 +14,18 @@
 
 int	move(int key_code, t_image *img)
 {
-	if (key_code == 2)
+	if (key_code == 100)
+	{
+		printf("d\n");
 		right(img);
-	if (key_code == 13)
+	}
+	if (key_code == 119)
 		up(img);
-	if (key_code == 0)
+	if (key_code == 97)
 		left(img);
-	if (key_code == 1)
+	if (key_code == 115)
 		down(img);
-	if (key_code == 53)
+	if (key_code == 27)
 	{
 		ft_printf("GAME FINISHED\n");
 		free_list(img);
