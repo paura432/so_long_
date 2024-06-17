@@ -27,7 +27,7 @@ int	close_window(t_image *img)
 {
 	ft_printf("GAME FINISHED\n");
 	free_list(img);
-	return(0);
+	return (0);
 }
 
 int	check_extension(char *str)
@@ -52,7 +52,6 @@ int	main(int argc, char **argv)
 	char	**map;
 	t_image	*img;
 
-	atexit(leaks);
 	if (argc != 2 || (argc == 2 && !check_extension(argv[1])))
 		return (ft_printf("error\nbad argument\n"), 1);
 	map = ft_read(argv);

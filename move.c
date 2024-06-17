@@ -14,6 +14,7 @@
 
 int	move(int key_code, t_image *img)
 {
+	printf("%i\n", key_code);
 	if (key_code == 100)
 	{
 		printf("d\n");
@@ -25,7 +26,7 @@ int	move(int key_code, t_image *img)
 		left(img);
 	if (key_code == 115)
 		down(img);
-	if (key_code == 27)
+	if (key_code == 65307)
 	{
 		ft_printf("GAME FINISHED\n");
 		free_list(img);
